@@ -27,7 +27,7 @@
                 </ul>
             </div>
         @endif
-        @if($errors->any())
+        {{-- @if($errors->any())
             <div class="alert alert-danger">
                 @foreach ($errors->all() as $error)
                     <li>
@@ -35,7 +35,7 @@
                     </li>
                 @endforeach
             </div>
-        @endif
+        @endif --}}
         <!-- شروع فرم  -->
         <form action="{{route('AdminProfileEditValidation')}}" method="POST" enctype="multipart/form-data">
             {{-- کلید برای اسال فرم به صورت پست --}}
@@ -50,11 +50,17 @@
             <div class="card-body">
                 <div class="form-group">
                     {{-- ورودی نام ادمین --}}
+                    @error('realname')
+                        <div style="color: red; cursor: default; font-size: 20px;">{{$message}}</div>
+                    @enderror
                     <label for="inputPassword3" class="col-sm-2 control-label">⇂ نام شما ⇃</label><br>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="inputPassword3" name="realname" value="{{$Admin_info->realname}}" placeholder="نام خود را وارد کنید" required><br><br>
                     </div>
-
+                    {{-- ورودی نام کاربری ادمین --}}
+                    @error('username')
+                        <div style="color: red; cursor: default; font-size: 20px;">{{$message}}</div>
+                    @enderror
                     <label for="UserName" class="control-label">⇂ نام کاربری ⇃</label><br/>
                     <div class="col-sm-10">
                         <input type="text" name="username" class="form-control" id="UserName" value="{{$Admin_info->username}}" placeholder="نام کاربری را وارد کنید" required><br/><br/>
@@ -62,6 +68,15 @@
                     <input type="button" id="ShowBox" class="btn btn-default" value="تغییر رمز">
                     <div id="PasswordsBox" style="display: none">
                         {{-- ورودی رمز --}}
+                        @error('password')
+                            <div style="color: red; cursor: default; font-size: 20px;">{{$message}}</div>
+                            <script>
+                                $(document).ready(function(){
+                                    $("#PasswordsBox").show();
+                                    $("#ShowBox").hide();
+                                });
+                            </script>
+                        @enderror
                         @if(session()->get("Password_Error"))
                             <script>
                                 $(document).ready(function(){
