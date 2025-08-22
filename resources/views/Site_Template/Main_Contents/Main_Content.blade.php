@@ -13,31 +13,29 @@
         @foreach ($products as $item)
             @if ($loop->first)
             <div class="featured-slider-1 border-radius-10 mb-200">
-                <div class="featured-slider-1-items">
-                    <div class="slider-single p-10">
-                        <div class="img-hover-slide border-radius-15 mb-30 position-relative overflow-hidden">
-                            <a href="{{route('Single-Show',$item->id)}}">
-                                @if (file_exists(public_path('storage\\ProductsImage\\').$item->image))
-                                <img src='{{asset('storage\\ProductsImage\\').$item->image}}' style="width: 100%: height:100%;" alt="post-slider">
-                                @else
-                                <img src="{{asset('Images/Image Not Found.jpg')}}" style="width: 100%: height:100%;" alt="post-slider">
-                                @endif
-                            </a>
-                            <div class="d-flex justify-content-between">
-                                <h5>
-                                    <a href="{{route('Single-Show',$item->id)}}">{{$item->title}}</a>
-                                </h5>
-                                <div class="entry-meta">
-                                    <a class="entry-meta meta-0" href="{{route('Same-Category',$item->category_id)}}"><span class="post-in text-white font-x-small" style="background-color: {{$item->category->category_color}}">{{$item->category_name}}</span></a>
-                                </div>
+                <div class="p-10">
+                    <div class="img-hover-slide border-radius-15 mb-30 position-relative overflow-hidden" style="width: auto; height: auto;">
+                        <a href="{{route('Single-Show',$item->id)}}">
+                            @if (file_exists(public_path('storage\\ProductsImage\\').$item->image))
+                            <img src='{{asset('storage\\ProductsImage\\').$item->image}}' style="width: 100%: height:100%;" alt="post-slider">
+                            @else
+                            <img src="{{asset('Images/Image Not Found.jpg')}}" style="width: 100%: height:100%;" alt="post-slider">
+                            @endif
+                        </a>
+                        <div class="d-flex justify-content-between">
+                            <h5>
+                                <a href="{{route('Single-Show',$item->id)}}">{{$item->title}}</a>
+                            </h5>
+                            <div class="entry-meta">
+                                <a class="entry-meta meta-0" href="{{route('Same-Category',$item->category_id)}}"><span class="post-in text-white font-x-small" style="background-color: {{$item->category->category_color}}">{{$item->category_name}}</span></a>
                             </div>
                         </div>
-                        <div class="pr-10 pl-10">
-                            <h4 class="post-title mb-20"><a href="{{route('Single-Show',$item->id)}}">{{$item->short_description}}</a></h4>
-                            <div class="mb-30 overflow-hidden">
-                                <div class="entry-meta meta-2 float-right">
-                                    <a href="{{route('Same-Factory',$item->factory_id)}}" tabindex="0"><span class="author-name text-grey h-100"> شرکت {{$item->factory_name}}</span></a>
-                                </div>
+                    </div>
+                    <div class="pr-10 pl-10">
+                        <h4 class="post-title mb-20"><a href="{{route('Single-Show',$item->id)}}">{{$item->short_description}}</a></h4>
+                        <div class="mb-30 overflow-hidden">
+                            <div class="entry-meta meta-2 float-right">
+                                <a href="{{route('Same-Factory',$item->factory_id)}}" tabindex="0"><span class="author-name text-grey h-100"> شرکت {{$item->factory_name}}</span></a>
                             </div>
                         </div>
                     </div>
