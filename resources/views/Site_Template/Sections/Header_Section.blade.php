@@ -69,21 +69,19 @@
                                                 <li class="hover-box-shadow text-center"><a href="{{route('Home')}}"><strong>صفحه اصلی</strong></a></li>
                                                 <li class="hover-box-shadow text-center"><a href="{{route('All-Products')}}"><strong>تمامی محصولات</strong></a></li>
                                             </ul>
-                                            @if (empty(Session::get('username')) and empty(Session::get('AdminName')))
+                                            @if (empty(Session::get('username')) and empty(Session::get('AdminUserName')))
                                                 <ul class="col-md-2">
                                                     <li class="hover-box-shadow text-center"><a href="{{route('LogIn')}}"><strong>ورود</strong></a></li>
                                                     <li class="hover-box-shadow text-center"><a href="{{route('Register')}}"><strong>ثبت نام</strong></a></li>
                                                 </ul>
-                                                <ul class="col-md-2">
-                                                    <li class="hover-box-shadow text-center"><a href="{{route('About-Us')}}"><strong>درباره ما</strong></a></li>
-                                                </ul>
-                                            @else
-                                                <ul class="col-md-2">
-                                                    <li class="hover-box-shadow text-center"><a href="{{route('About-Us')}}"><strong>درباره ما</strong></a></li>
-                                                </ul>
-                                                <ul class="col-md-2">
+                                                @else
+                                                <ul>
+                                                    <li class="hover-box-shadow text-center"><a href="{{route('Admin-Panel')}}" target="_blank"><strong>پنل ادمین</strong></a></li>
                                                 </ul>
                                             @endif
+                                            <ul class="col-md-2">
+                                                <li class="hover-box-shadow text-center"><a href="{{route('About-Us')}}"><strong>درباره ما</strong></a></li>
+                                            </ul>
                                                 <div class="col-md-6 text-left">
                                                     <a href="#"><img class="border-radius-10" src="{{asset('assets/imgs/ads-2.jpg')}}" alt=""></a>
                                                 </div>
