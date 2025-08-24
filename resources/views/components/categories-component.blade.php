@@ -3,7 +3,7 @@
     @foreach ($categories as $item)
         <div >
             <a href="{{route('Same-Category',$item->id)}}">
-                <li style="background-color: {{$item->category_color}};" class="CategoryChild">
+                <li style="border: 2px solid {{$item->category_color}}; color:{{$item->category_color}};" class="CategoryChild">
                     {{$item->category_title}}
                 </li>
             </a>

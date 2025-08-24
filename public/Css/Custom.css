@@ -135,9 +135,6 @@
     width: 100%;
     height: 30px;
 }
-a .CategoryChild{
-    color: white !important;
-}
 .CategoryChild:hover{
     font-weight: bold;
     font-size: large;
