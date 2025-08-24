@@ -1,113 +1,113 @@
 /* Alert Messages */
 .Message{
-    font-size: 25px;
-    font-weight: bold;
     margin-bottom: 20px !important;
+    text-align: center !important;
     margin-right: auto !important;
     margin-left: auto !important;
+    font-weight: bold;
+    font-size: 25px;
     width: 420px;
     height: 40px;
-    text-align: center !important;
 }
 /* Text Boxes */
 .TextBox{
+    border: 2px solid black !important;
+    border-radius: 10px !important;
     text-align: center !important;
-    font-size: 19px !important;
     font-weight: bold !important;
+    font-size: 19px !important;
     width: 260px !important;
     height: 50 !important;
-    border-radius: 10px !important;
-    border: 2px solid black !important;
 }
 /* Admin & User Button */
 #AdminAndUserButtonBox{
-    display: flex;
-    font-size: 25px !important;
-    font-weight: bold;
-    align-items: center;
     justify-content: space-around;
+    background-color: darkgray;
+    font-size: 25px !important;
+    align-items: center;
+    border-radius: 12px;
+    margin-right: auto;
+    font-weight: bold;
+    margin-left: auto;
+    display: flex;
     width: 280px;
     height: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: darkgray;
-    border-radius: 12px;
 }
 .AdminAndUserButton{
+    background-color: lightgray;
+    border-radius: 8px;
     width: 100px;
     height: 35px;
-    border-radius: 8px;
-    background-color: lightgray;
 }
 /* Button Login */
 #LogIn{
-    position: relative;
-    display: inline-block;
-    width: 80px;
-    height: 40px;
-    text-align: center;
-    border-radius: 5rem;
-    box-shadow: 0px -5px 4px gray;
     background-color: black !important;
-    color: white !important;
     transition-duration: 0.5s !important;
+    box-shadow: 0px -5px 4px gray;
     line-height: 2.5 !important;
+    color: white !important;
+    display: inline-block;
+    border-radius: 5rem;
+    position: relative;
+    text-align: center;
+    height: 40px;
+    width: 80px;
 
 }
 #LogIn:hover{
-    box-shadow: none;
     background-color: darkgray !important;
     color: black !important;
+    box-shadow: none;
 }
 #LogIn ion-icon{
     position: absolute;
-    top: 30%;
     right: 15%;
+    top: 30%;
 }
 /* Button Register */
 #Register{
-    display: inline-block;
-    width: 90px;
-    height: 40px;
-    text-align: center;
-    border-radius: 5rem;
-    box-shadow: 0px -5px 4px gray;
     background-color: black !important;
-    color: white !important;
     transition-duration: 0.5s !important;
+    box-shadow: 0px -5px 4px gray;
     line-height: 2.5 !important;
+    color: white !important;
+    display: inline-block;
+    border-radius: 5rem;
+    text-align: center;
+    height: 40px;
+    width: 90px;
 }
 #Register:hover{
-    box-shadow: none;
     background-color: darkgray !important;
     color: black !important;
+    box-shadow: none;
 }
 /* User Name Box */
 #UserNameBox{
+    background-color: darkgray !important;
+    font-size: large !important;
     text-align: center;
-    width: 100%;
+    border-radius: 5rem;
     border: none;
     height: 40px;
-    font-size: large !important;
-    background-color: darkgray !important;
-    border-radius: 5rem;
+    width: 100%;
 }
 /* User Information Box */
 #InformationBox{
-    display: none;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    width: 80%;
-    height: 90px;
     background-color: bisque !important;
     border-radius: 0 0 10px 10px;
+    margin-right: auto;
+    text-align: center;
+    margin-left: auto;
+    display: none;
+    height: 90px;
+    width: 80%;
 }
 /* Information Box Child */
 .InformationBoxChild{
     background-color: bisque !important;
-    border: none;
     cursor: pointer;
+    border: none;
 }
 /* Exit Button */
 #ExitButton{
@@ -118,50 +118,50 @@
 }
 /* Edit Button */
 #EditButton{
-    margin-top: 10px;
     display: inline-block;
     margin-bottom: 18px;
+    margin-top: 10px;
 }
 #EditButton:hover{
     color: blue;
 }
 /* Category Box */
 .CategoryChild{
-    width: 100%;
-    height: 30px;
+    border-radius: 10px;
     margin-bottom: 5px;
     text-align: center;
-    border-radius: 10px;
     font-size:medium;
     transition: 0.5s;
+    width: 100%;
+    height: 30px;
 }
 a .CategoryChild{
     color: white !important;
 }
 .CategoryChild:hover{
-    scale: 1.2;
-    font-size: large;
     font-weight: bold;
+    font-size: large;
+    scale: 1.2;
 
 }
 /* Factory Box */
 .FactoryChild{
-    width: 100%;
-    height: 30px;
-    margin-bottom: 5px;
     background-color: gray;
-    text-align: center;
     border-radius: 10px;
+    text-align: center;
+    margin-bottom: 5px;
     font-size:medium;
     transition: 0.5s;
+    width: 100%;
+    height: 30px;
 }
 a .FactoryChild{
     color: white !important;
 }
 .FactoryChild:hover{
-    scale: 1.2;
-    font-size: large;
     font-weight: bold;
+    font-size: large;
+    scale: 1.2;
 
 }
 /* Custom Page Number */
@@ -170,45 +170,57 @@ a .FactoryChild{
 }
 /* Admin Name Box */
 #AdminNameBox{
-    display: flex;
+    background-color: darkgray !important;
+    font-size: large !important;
+    border-radius: 5rem;
     align-items: center;
     text-align: center;
-    width: 100%;
-    border: none;
+    display: flex;
     height: 40px;
-    font-size: large !important;
-    background-color: darkgray !important;
-    border-radius: 5rem;
+    border: none;
+    width: 100%;
 }
 #AdminNameBox strong{
     margin: auto;
 }
 /* Alert Button */
 .AlertButton {
-    width: 200px;
-    height: 50px;
-    display: inline-block;
+    transition: all 450ms linear 0s;
     border: 1px solid transparent;
-    font-size: 18px;
-    font-weight: 500;
+    text-transform: uppercase;
+    display: inline-block;
     text-align: center;
     border-radius: 4px;
-    color: #fff;
-    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 18px;
     cursor: pointer;
-    transition: all 450ms linear 0s;
+    color: #fff;
+    width: 200px;
+    height: 50px;
 }
 button.ALertButton:hover {
     background: black !important;
 }
 /* Products Not Found Message Box */
 .Message_Box{
-    width: 90%;
-    text-align: center;
     border: 5px dotted green;
-    padding: 50px;
-    margin: 0px 30px;
-    font-weight: bold;
-    color:darkred;
     font-size: x-large;
+    text-align: center;
+    font-weight: bold;
+    margin: 0px 30px;
+    color:darkred;
+    padding: 50px;
+    width: 90%;
+}
+/* About-Us Text Style */
+.AboutUsStyle{
+    background-color:whitesmoke;
+    border: 3px solid darkblue;
+    border-radius: 0.5rem;
+    font-size: xx-large;
+    margin: 100px auto;
+    font-weight: bold;
+    line-height: 3;
+    height: 100px;
+    width: 70%;
 }
