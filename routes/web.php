@@ -54,10 +54,12 @@ Route::group(['prefix' => 'Sepehr-Electric'], function(){
     Route::group(['prefix' => 'Product'], function (){
         // نمایش پست تکی
         Route::get('/Single_{id}', [HomeProductController::class , "single_Show"])->name('Single-Show');
-        // نمایش پست ها در یک دسته بندی
-        Route::get('/Same-Category {id}', [HomeProductController::class , "Same_Category"])->name('Same-Category');
-        // نمایش پست ها در یک کارخانه
-        Route::get('/Same-Factory {id}', [HomeProductController::class , "Same_Factory"])->name('Same-Factory');
+        Route::group(['prefix' => 'same'], function(){
+            // نمایش پست ها در یک دسته بندی
+            Route::get('/Category_{id}', [HomeProductController::class , "Same_Category"])->name('Same-Category');
+            // نمایش پست ها در یک کارخانه
+            Route::get('/Factory_{id}', [HomeProductController::class , "Same_Factory"])->name('Same-Factory');
+        });
     });
 
     // ↓ صفحه های اعتبار سنجی اطلاعات (سایت اصلی)
