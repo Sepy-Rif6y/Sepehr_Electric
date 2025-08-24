@@ -13,10 +13,15 @@ class UserController extends Controller
     public function Users_List(){
         $per_page = request()->Per_Page ?? 10;
         $Search = request()->UserSearch ?? '';
-        $users = user::whereRaw("(username like '%$Search%' or realname like '%$Search%')")->orderby('id','desc')->paginate($per_page);
+        $users = user::whereRaw("(username like '%$Search%' or realname like '%$Search%')")->where('status' , 0)->orderby('id','desc')->paginate($per_page);
+        $not_found = '';
+        if(count($users) == 0){
+            $not_found = "کاربری با این مشخصات یافت نشد";
+        }
         $data = [
             'users' => $users,
-            'title' => ' - لیست کاربران'
+            'title' => ' - لیست کاربران',
+            'message' => $not_found
         ];
         return view("Admin_Template.Main_Contents.User.Users_List",$data);
     }
@@ -157,7 +162,7 @@ class UserController extends Controller
             // تشخیص تغییر رمز و تولید پیام
             if($password){
                 if(!Hash::check($password,$lastpassword)){
-                    $change .= "<li>" . "رمز کاربر به " . $password . " تغییر یافت" . "</li>";
+                    $change .= "<li>" . "رمز کاربر  تغییر یافت" . "</li>";
                 }
             }
             // انجام عملیات ویرایش کاربر

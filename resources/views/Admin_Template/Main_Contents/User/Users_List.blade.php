@@ -42,8 +42,17 @@
                         </div>
                     </div>
                 </form>
+            </div>
+
+            @if (!$message == null)
+                <div class="alert alert-warning" style="text-align: center">
+                    {{$message}}
                 </div>
+            @else
                 <div class="d-flex align-items-center CustomPageNumber">{{$users->appends(request()->input())->links("pagination::bootstrap-4")}}</div>
+            @endif
+
+            <div>
                 <form>
                     <label>تعداد در هر صفحه</label>
                     <select name="Per_Page" class="form-control d-inline" style="width: 75px">
@@ -56,6 +65,7 @@
                     <input type="submit" value="تایید" class="btn btn-info">
                 </form>
             </div>
+        </div>
         {{-- جدول لیست کاربران --}}
       <table id="example1" class="table table-bordered table-striped">
         <thead>
